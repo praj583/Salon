@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow & Grace Salon | Luxury Salon & Spa, Chennai</title>
+  
+  <!-- Google Fonts for Luxury Aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e1b18;
+      --accent-gold: #c5a059;
+      --accent-gold-light: #dfc288;
+      --accent-rose: #d89ca4;
+      --bg-cream: #faf7f2;
+      --bg-card: #ffffff;
+      --text-dark: #2a2523;
+      --text-muted: #6e6761;
+      --border-color: #ede7df;
+      --shadow-sm: 0 4px 12px rgba(30, 27, 24, 0.05);
+      --shadow-lg: 0 16px 36px rgba(30, 27, 24, 0.09);
+      --radius: 10px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-cream);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      letter-spacing: 0.5px;
+    }
+
+    /* Demo Notice Bar */
+    .demo-strip {
+      background: #2a2523;
+      color: #e5d5be;
+      font-size: 0.78rem;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 6px 16px;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-top: 3px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.85rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.35);
+    }
+
+    .btn-gold:hover {
+      background: #b58f4a;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #ffffff;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: linear-gradient(rgba(20, 18, 16, 0.65), rgba(20, 18, 16, 0.7)),
+                  url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: #ffffff;
+    }
+
+    .hero-box {
+      max-width: 800px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero-tagline {
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-gold-light);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #ede7df;
+      max-width: 620px;
+      margin: 0 auto 2.25rem;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Section Layout */
+    section {
+      padding: 5.5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.6rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Special Offer Banner */
+    .offer-banner {
+      background: linear-gradient(135deg, #2b221c 0%, #433328 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 3rem 2.5rem;
+      margin: 2rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(197, 160, 89, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .offer-content h3 {
+      font-size: 2.2rem;
+      color: var(--accent-gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .offer-content p {
+      color: #e5dcd3;
+      font-size: 1rem;
+      max-width: 600px;
+    }
+
+    .offer-badge {
+      display: inline-block;
+      background: rgba(197, 160, 89, 0.2);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-light);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 50px;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-gold-light);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .service-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-title {
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    .service-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .service-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .service-action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .duration {
+      font-size: 0.8rem;
+      color: #9c9288;
+      font-weight: 500;
+    }
+
+    .book-link {
+      color: var(--accent-gold);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    /* About Us */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .about-image-stack {
+      position: relative;
+    }
+
+    .about-main-img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-content h3 {
+      font-size: 2.3rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .about-content p {
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      font-size: 0.98rem;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .stat-item h4 {
+      font-size: 2rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    .stat-item p {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 280px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 50%, rgba(20, 18, 16, 0.85));
+      display: flex;
+      align-items: flex-end;
+      padding: 1.25rem;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* Reviews */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .review-stars {
+      color: #e5a83b;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .review-text {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .review-client {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .client-name {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .demo-tag {
+      background: #f1eae0;
+      color: #8c7f72;
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-style: normal;
+    }
+
+    /* Booking Form Section */
+    .booking-section {
+      background: #f4ede3;
+      border-radius: 16px;
+      padding: 4rem 2.5rem;
+      border: 1px solid #e5dacf;
+    }
+
+    .booking-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .booking-info h3 {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .booking-info p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-box {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: #faf8f5;
+      color: var(--text-dark);
+      transition: border 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      background: #ffffff;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .booking-alert {
+      display: none;
+      background: #e6f4ea;
+      color: #137333;
+      padding: 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Location & Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2.25rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .contact-list {
+      list-style: none;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.85rem;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #ffffff;
+      padding: 0.85rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 100;
+      transition: transform 0.25s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #cec4b7;
+      padding: 4rem 1.5rem 2rem;
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: #a89f94;
+      max-width: 380px;
+    }
+
+    .footer-col h5 {
+      color: #ffffff;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col a {
+      color: #a89f94;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #8c8277;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .about-wrap, .booking-wrap, .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .offer-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Notice Banner -->
+  <div class="demo-strip">
+    Portfolio Demonstration • Glow & Grace Salon • All details & appointments are sample content
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-title">Glow & Grace</span>
+        <span class="brand-subtitle">Luxury Salon & Spa • Chennai</span>
+      </a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#offers">Special Offer</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Location</a>
+      </nav>
+      <a href="#book" class="btn btn-gold" style="padding: 0.6rem 1.25rem; font-size: 0.78rem;">Book Now</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="max-width: 100%; margin: 0;">
+    <div class="hero-box">
+      <div class="hero-tagline">Refined Elegance in Nungambakkam</div>
+      <h1>Unveil Your Radiance with Bespoke Beauty Care</h1>
+      <p>Chennai’s boutique salon dedicated to artisan hair design, rejuvenating spa rituals, and bridal couture transformations.</p>
+      <div class="hero-buttons">
+        <a href="#book" class="btn btn-gold">Book Appointment</a>
+        <a href="#services" class="btn btn-outline-light">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offer Section -->
+  <section id="offers" style="padding-top: 3.5rem; padding-bottom: 2rem;">
+    <div class="offer-banner">
+      <div class="offer-content">
+        <span class="offer-badge">Seasonal Celebration</span>
+        <h3>Festive Glamour & Spa Package</h3>
+        <p>Book any Signature Facial & Moroccan Hair Spa together and enjoy a complimentary Luxury Manicure & 20% savings this month.</p>
+      </div>
+      <div>
+        <a href="#book" class="btn btn-gold" style="white-space: nowrap;">Claim Offer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-header">
+      <div class="section-subtitle">Our Signature Menu</div>
+      <h2>Curated Beauty Services</h2>
+      <p>Precision artistry performed by certified senior stylists using premium international organic formulations.</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- 1. Haircut -->
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=80" alt="Precision Haircut" />
+        <div class="service-body">
+          <div class="service-top">
+            <h3 class="service-title">Couture Haircut & Styling</h3>
+            <span class="service-price">₹1,400</span>
+          </div>
+          <p class="service-desc">Personalized consultation, scalp detox wash, precision scissor cut, and bouncy salon blowout.</p>
+          <div class="service-action">
+            <span class="duration">⏱ 45 mins</span>
+            <a href="#book" class="book-link" onclick="selectService('Couture Haircut')">Select & Book &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Hair Spa -->
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=80" alt="Moroccan Hair Spa" />
+        <div class="service-body">
+          <div class="service-top">
+            <h3 class="service-title">Moroccan Argan Hair Spa</h3>
+            <span class="service-price">₹2,800</span>
+          </div>
+          <p class="service-desc">Intense moisture infusion with warm steam therapy and deep acupressure head massage to restore shine.</p>
+          <div class="service-action">
+            <span class="duration">⏱ 60 mins</span>
+            <a href="#book" class="book-link" onclick="selectService('Moroccan Hair Spa')">Select & Book &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Facial -->
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" alt="Radiance Facial" />
+        <div class="service-body">
+          <div class="service-top">
+            <h3 class="service-title">Hydra-Glow Brightening Facial</h3>
+            <span class="service-price">₹3,500</span>
+          </div>
+          <p class="service-desc">Multi-step ultrasound lymphatic drainage, pure hyaluronic serum infusion, and gold leaf hydro-gel mask.</p>
+          <div class="service-action">
+            <span class="duration">⏱ 75 mins</span>
+            <a href="#book" class="book-link" onclick="selectService('Hydra-Glow Facial')">Select & Book &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Manicure -->
+      <div class="service-card">
+        <img class="service-img" src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=700&q=80" alt="Luxury Spa Manicure" />
+        <div class="service-body">
+          <div class="service-top">
+            <h3 class="service-title">Rose Petal Spa Manicure</h3>
+            <span class="service-price">₹1,200</span>
+          </div>
+          <p class="service-desc">Exfoliating rose sugar scrub, warm paraffin dip, cuticle nourishing therapy, and gel polish finish.</p>
+          <div class="service-action">
+            <span class="duration">⏱ 50 mins</span>
+            <a href="#book" class="book-link" onclick="selectService('Spa Manicure')">Select & Book &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Bridal Makeup -->
+      <div class="service-card" style="grid-column: 1 / -1; max-width: 780px; margin: 0 auto; width: 100%;">
+        <img class="service-img" style="height: 260px;" src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=80" alt="Bridal Makeup" />
+        <div class="service-body">
+          <div class="service-top">
+            <h3 class="service-title">South Indian Heritage Bridal Makeover</h3>
+            <span class="service-price">₹18,500</span>
+          </div>
+          <p class="service-desc">HD airbrush bridal makeup, traditional saree draping, customized hair accessory & floral styling, and complimentary pre-wedding skin consultation.</p>
+          <div class="service-action">
+            <span class="duration">⏱ 180 mins</span>
+            <a href="#book" class="book-link" onclick="selectService('Bridal Makeup')">Select & Book &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about">
+    <div class="about-wrap">
+      <div class="about-image-stack">
+        <img class="about-main-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=900&q=80" alt="Salon Interior" />
+      </div>
+      <div class="about-content">
+        <div class="section-subtitle">Our Heritage</div>
+        <h3>Where Chennai Glamour Meets Restorative Wellness</h3>
+        <p>Founded in the leafy avenues of Nungambakkam, <strong>Glow & Grace Salon</strong> was conceived as a sanctuary away from the city's lively bustle. We blend time-honoured Indian beauty secrets with cutting-edge European salon techniques.</p>
+        <p>Our team of stylists and certified aestheticians believe beauty is personal. Every treatment begins with a dedicated consultation to ensure your skin and hair receive precisely what they need.</p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <h4>8+</h4>
+            <p>Years of Artistry</p>
+          </div>
+          <div class="stat-item">
+            <h4>12k+</h4>
+            <p>Happy Clients</p>
+          </div>
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Cruelty-Free Products</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Gallery -->
+  <section id="gallery">
+    <div class="section-header">
+      <div class="section-subtitle">Visual Portfolio</div>
+      <h2>Moments of Transformation</h2>
+      <p>A glimpse into our salon space, editorial hair makeovers, and radiant bridal preparations.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80" alt="Bridal Styling" />
+        <div class="gallery-overlay"><span>Bridal Hair & Florals</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=80" alt="Modern Hair Coloring" />
+        <div class="gallery-overlay"><span>Sun-Kissed Balayage</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80" alt="Nail Art" />
+        <div class="gallery-overlay"><span>Artisan Nail Studio</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80" alt="Facial Therapy" />
+        <div class="gallery-overlay"><span>Holistic Facial Suites</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section id="reviews">
+    <div class="section-header">
+      <div class="section-subtitle">Testimonials</div>
+      <h2>Voices of Delight</h2>
+      <p>Authentic feedback created as demo illustrations for prospective visitors.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Glow & Grace handled my wedding muhurtham and reception looks. The makeup stayed flawless in Chennai humidity without caking. My entire family was stunned by the elegance!"</p>
+        </div>
+        <div class="review-client">
+          <span class="client-name">Deepika Ramanathan</span>
+          <span class="demo-tag">Sample Client</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"The Moroccan Argan Hair Spa brought my dry curls back to life. Super serene private suites, soothing music, and zero pushy sales talk. Highly recommend."</p>
+        </div>
+        <div class="review-client">
+          <span class="client-name">Pooja Venkatesh</span>
+          <span class="demo-tag">Sample Client</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Cleanest salon in Nungambakkam. Booking through WhatsApp was instant, and the senior stylist gave me the most flattering layered haircut I've had in years."</p>
+        </div>
+        <div class="review-client">
+          <span class="client-name">Nithya Swaminathan</span>
+          <span class="demo-tag">Sample Client</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form Section -->
+  <section id="book">
+    <div class="booking-section">
+      <div class="booking-wrap">
+        <div class="booking-info">
+          <div class="section-subtitle">Reservations</div>
+          <h3>Book Your Pampering Session</h3>
+          <p>Reserve your preferred appointment slot online. Our guest relations team will confirm your visit within 2 hours.</p>
+          <div style="font-size: 0.9rem; color: #5a524a; line-height: 1.8;">
+            <p>✨ <strong>Complimentary Beverage:</strong> Cold press juices or artisanal green tea with every treatment.</p>
+            <p>✨ <strong>Private Suites:</strong> Available for bridal makeovers and spa sessions upon request.</p>
+          </div>
+        </div>
+
+        <div class="form-box">
+          <form id="appointmentForm" onsubmit="handleBooking(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Your Name</label>
+                <input type="text" id="fullName" class="form-control" placeholder="e.g. Priya Sharma" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" class="form-control" placeholder="+91 98765 00000" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="serviceSelect">Selected Service</label>
+                <select id="serviceSelect" class="form-control" required>
+                  <option value="">Select a service...</option>
+                  <option value="Couture Haircut">Couture Haircut (₹1,400)</option>
+                  <option value="Moroccan Hair Spa">Moroccan Argan Hair Spa (₹2,800)</option>
+                  <option value="Hydra-Glow Facial">Hydra-Glow Facial (₹3,500)</option>
+                  <option value="Spa Manicure">Rose Petal Spa Manicure (₹1,200)</option>
+                  <option value="Bridal Makeup">Bridal Heritage Makeover (₹18,500)</option>
+                  <option value="Special Offer Package">Seasonal Package Combo</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="preferredDate">Preferred Date</label>
+                <input type="date" id="preferredDate" class="form-control" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time Slot</label>
+              <select id="preferredTime" class="form-control">
+                <option value="10:00 AM - 12:00 PM">Morning (10:00 AM – 12:00 PM)</option>
+                <option value="12:00 PM - 03:00 PM">Afternoon (12:00 PM – 03:00 PM)</option>
+                <option value="03:00 PM - 06:00 PM">Evening (03:00 PM – 06:00 PM)</option>
+                <option value="06:00 PM - 08:30 PM">Night (06:00 PM – 08:30 PM)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Special Notes (Optional)</label>
+              <textarea id="notes" class="form-control" rows="2" placeholder="Skin allergies, bridal inquiry, or preferred stylist..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%; padding: 0.95rem;">Confirm Appointment Request</button>
+            <div id="bookingAlert" class="booking-alert">
+              ✓ Demo booking received! In a live website, this would send an SMS & email confirmation.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <section id="contact">
+    <div class="section-header">
+      <div class="section-subtitle">Find Our Studio</div>
+      <h2>Location & Visiting Hours</h2>
+      <p>Convenient valet parking available for all clients.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Salon Address</h3>
+        <p style="font-weight: 600; color: var(--primary);">Glow & Grace Luxury Salon <span class="demo-tag">Sample Place</span></p>
+        <p style="color: var(--text-muted); margin-top: 0.4rem; font-size: 0.95rem;">
+          No. 42, Kothari Road, Near Sterling Road Signal,<br />
+          Nungambakkam, Chennai, Tamil Nadu 600034
+        </p>
+        <p style="margin-top: 1.25rem; font-size: 0.92rem;">
+          <strong>Direct Line:</strong> +91 44 2822 0000 <span class="demo-tag">Demo</span><br />
+          <strong>Concierge:</strong> hello@glowandgracedemo.in
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Studio Timings</h3>
+        <ul class="contact-list">
+          <li><span>Tuesday – Friday</span> <strong>10:00 AM – 8:30 PM</strong></li>
+          <li><span>Saturday – Sunday</span> <strong>09:30 AM – 9:00 PM</strong></li>
+          <li><span>Mondays</span> <strong style="color: #b58f4a;">Closed for Sanitization</strong></li>
+          <li><span>Bridal Bookings</span> <strong>Available on Request 24/7</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/919876543210?text=Hello%20Glow%20%26%20Grace%2C%20I%20would%20like%20to%20inquire%20about%20salon%20appointments." target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+    <span>💬 WhatsApp Us</span>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4 class="font-serif">Glow & Grace</h4>
+        <p>A luxury boutique beauty retreat offering tailored salon rituals and bridal couture transformations in Chennai.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#services">Services & Pricing</a></li>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#gallery">Bridal Portfolio</a></li>
+          <li><a href="#book">Online Appointment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="#">Instagram @glowandgracedemo</a></li>
+          <li><a href="#">Facebook /glowandgrace</a></li>
+          <li><a href="#contact">Google Maps Directions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 Glow & Grace Salon. All rights reserved.</div>
+      <div>Designed for demonstration & client presentation purposes.</div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Pre-select service in form when clicked from service card
+    function selectService(serviceName) {
+      const select = document.getElementById('serviceSelect');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(serviceName) || select.options[i].value === serviceName) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    // Set minimum date for booking to today
+    const dateInput = document.getElementById('preferredDate');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+    dateInput.value = today;
+
+    // Handle Appointment Form Submission (Demo)
+    function handleBooking(event) {
+      event.preventDefault();
+      const name = document.getElementById('fullName').value;
+      const service = document.getElementById('serviceSelect').value;
+      const alertBox = document.getElementById('bookingAlert');
+      
+      alertBox.style.display = 'block';
+      alertBox.innerHTML = `✓ Thank you <strong>${name}</strong>! Your appointment request for <strong>${service}</strong> has been logged (Demo).`;
+
+      // Reset form fields smoothly
+      setTimeout(() => {
+        document.getElementById('appointmentForm').reset();
+        dateInput.value = today;
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
